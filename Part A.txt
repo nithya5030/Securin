@@ -1,0 +1,60 @@
+'''Doomed Dice Challenge - Part A'''
+
+
+dice_A = list(range(1,7))
+dice_B = list(range(1,7))
+
+print("Faces of a dice\n",dice_A)
+
+print("\nTotal Number of possible combinations of two dices are ",len(dice_A)*len(dice_B))
+
+for i in dice_A:
+    for j in dice_B:
+        print("[",i,",",j,"]",end=" ")
+    print()
+
+print("\nThe Probability of all Possible Sums occurring among the number of combinations from two Dices")
+
+freq = {}
+for i in dice_A:
+    for j in dice_B:
+        if (i+j in freq):
+            freq[i+j] += 1
+        else:
+            freq[i+j] = 1
+        
+for key, value in freq.items():
+        print("P(sum =",key,") = ",value,"/",(len(dice_A)*len(dice_B)),"=",(value/(len(dice_A)*len(dice_B))))
+        
+
+
+
+Output :
+
+Faces of a dice
+ [1, 2, 3, 4, 5, 6]
+
+Total Number of possible combinations of two dices are  36
+[ 1 , 1 ] [ 1 , 2 ] [ 1 , 3 ] [ 1 , 4 ] [ 1 , 5 ] [ 1 , 6 ] 
+[ 2 , 1 ] [ 2 , 2 ] [ 2 , 3 ] [ 2 , 4 ] [ 2 , 5 ] [ 2 , 6 ] 
+[ 3 , 1 ] [ 3 , 2 ] [ 3 , 3 ] [ 3 , 4 ] [ 3 , 5 ] [ 3 , 6 ] 
+[ 4 , 1 ] [ 4 , 2 ] [ 4 , 3 ] [ 4 , 4 ] [ 4 , 5 ] [ 4 , 6 ] 
+[ 5 , 1 ] [ 5 , 2 ] [ 5 , 3 ] [ 5 , 4 ] [ 5 , 5 ] [ 5 , 6 ] 
+[ 6 , 1 ] [ 6 , 2 ] [ 6 , 3 ] [ 6 , 4 ] [ 6 , 5 ] [ 6 , 6 ] 
+
+The Probability of all Possible Sums occurring among the number of combinations from two Dices
+P(sum = 2 ) =  1 / 36 = 0.027777777777777776
+P(sum = 3 ) =  2 / 36 = 0.05555555555555555
+P(sum = 4 ) =  3 / 36 = 0.08333333333333333
+P(sum = 5 ) =  4 / 36 = 0.1111111111111111
+P(sum = 6 ) =  5 / 36 = 0.1388888888888889
+P(sum = 7 ) =  6 / 36 = 0.16666666666666666
+P(sum = 8 ) =  5 / 36 = 0.1388888888888889
+P(sum = 9 ) =  4 / 36 = 0.1111111111111111
+P(sum = 10 ) =  3 / 36 = 0.08333333333333333
+P(sum = 11 ) =  2 / 36 = 0.05555555555555555
+P(sum = 12 ) =  1 / 36 = 0.027777777777777776
+
+
+
+
